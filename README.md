@@ -2,4 +2,4 @@
 projekt
 rühmaliikmed: Madis, Hardi, Taaniel
 idee 1: tunniplaan -> google calendar
-idee 2: rubiks cube solver
+12IT tunniplaan siin: https://tammegymnaasium.ee/tunniplaanike/view/klass/3ECB72B69D529F51
