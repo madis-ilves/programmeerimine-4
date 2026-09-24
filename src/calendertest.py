@@ -30,7 +30,7 @@ def get_service():
 
         # Open Chrome explicitly
         try:
-            webbrowser.get("chrome").open(auth_url)
+            webbrowser.get("Chrome").open(auth_url)
         except:
             print("\nChrome browser not found. Please paste the URL manually into Chrome.\n")
 
