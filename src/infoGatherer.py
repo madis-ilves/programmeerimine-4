@@ -4,7 +4,7 @@ import requests
 
 #
 # Klasside nimed ja tunniplaani lingid - Hardi + Madis tegi ilusamaks
-#
+# tagastab lingid
 
 def saa_lingid():
     lingid = {}
@@ -25,7 +25,7 @@ def saa_lingid():
 
 #
 # Klassi tunniplaanist info - Madis
-#
+# tagastab tunniplaani
 
 def saa_info(tunniplaani_link):
     tunniplaan = [] # tunniplaan = päev; tund; kursus
@@ -34,13 +34,16 @@ def saa_info(tunniplaani_link):
     tbody_tag = soup.find("tbody")
     tr_tags = tbody_tag.find_all("tr")
     # 1 tr = 1 rida tunniplaanis
-    ridu_uue_päevani = 0 # mitu <tr> on veel alles selles päevas
+    ridu_uue_päevani = -1 # mitu <tr> on veel alles selles päevas, alguseks -1
     # <tr> sees on <td>'d, igaüks on üks tund selles reas
     praegune_päev = [] # praeguse päeva info
     
     for tr_tag in tr_tags:
         # kui on uus päev, leia päeva pikkus
-        if ridu_uue_päevani == 0: 
+        if ridu_uue_päevani <= 0: # alguseks -1
+            if ridu_uue_päevani != -1: # salvesta praeguse päeva info kui see pole esimene loop
+                tunniplaan.append(praegune_päev)
+                praegune_päev = []
             päev = tr_tag.find("th") # <th>
             päeva_pikkus = int(päev["rowspan"]) # leiab <th> omaduse rowspan väärtuse(ehk mitu tr_tag'i on selles päevas)
             ridu_uue_päevani = päeva_pikkus
@@ -55,15 +58,27 @@ def saa_info(tunniplaani_link):
                 kursus = td_tag.find("div", class_ = "celltext5")
             if kursus != None:
                 kursuse_nimi = kursus.text # error kui kursus on None, sest tühi koht selles reas
-                print(kursuse_nimi)
+                #print(kursuse_nimi)
+                praegune_päev.append(kursuse_nimi)
         
         #loopi lõpp, üks rida läbi töötatud
         ridu_uue_päevani -= 1
-        
     
+    return tunniplaan
+
+#
+# DEBUG - tunniplaani printimine; hiljem pole seda vaja, tuleb visuaalselt ja kalendrisse
+#
+
+def print_tunniplaan(tunniplaan):
+    for päev in tunniplaan:
+        print("\n UUS PÄEV \n")
+        for tund in päev:
+            print(tund)
 
 # funktsioonide kutsumine
 
 lingid = saa_lingid()
 klass = input("Sisesta klass: ").upper() # nt "12IT"
-saa_info(lingid[klass])
+tunniplaan = saa_info(lingid[klass])
+print_tunniplaan(tunniplaan)
