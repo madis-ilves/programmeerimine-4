@@ -25,31 +25,31 @@ def saa_lingid():
 
 #
 # Klassi tunniplaanist info - Madis
-# tagastab tunniplaani
+# tagastab tunniplaani kujul tunniplaan[päev][tund][kursus]
 
 def saa_info(tunniplaani_link):
-    tunniplaan = [] # tunniplaan = päev; tund; kursus
+    tunniplaan = [] # tunniplaan[päev][tund][kursus]
     tunniplaan_raw = requests.get(tunniplaani_link)
     soup = BeautifulSoup(tunniplaan_raw.text, features="html.parser")
     tbody_tag = soup.find("tbody")
     tr_tags = tbody_tag.find_all("tr")
     # 1 tr = 1 rida tunniplaanis
-    ridu_uue_päevani = -1 # mitu <tr> on veel alles selles päevas, alguseks -1
+    ridu_uue_päevani = -1 # mitu <tr> on veel alles selles päevas, alguseks -1; teisisõnu max kursuste arv ühe tunni ajal sel päeval
     # <tr> sees on <td>'d, igaüks on üks tund selles reas
-    praegune_päev = [] # praeguse päeva info
+    praegune_päev = [] # praeguse päeva info, temp muutuja, uue päeva alguses salvestatakse see tunniplaani ja kustutatakse
     
     # töötle läbi kõik read
     for tr_tag in tr_tags:
         # kui on uus päev, leia päeva pikkus
-        if ridu_uue_päevani <= 0: # alguseks -1
-            if ridu_uue_päevani != -1: # salvesta praeguse päeva info kui see pole esimene loop
+        if ridu_uue_päevani <= 0: # alguseks on see -1
+            if ridu_uue_päevani != -1: # salvesta praeguse päeva info kui see pole esimene loop(muidu pole midagi salvestada)
                 tunniplaan.append(praegune_päev)
                 praegune_päev = []
-            päev = tr_tag.find("th") # <th>
+            päev = tr_tag.find("th")
             päeva_pikkus = int(päev["rowspan"]) # leiab <th> omaduse rowspan väärtuse(ehk mitu tr_tag'i on selles päevas)
             ridu_uue_päevani = päeva_pikkus
-        td_tags = tr_tag.find_all("td")
         
+        td_tags = tr_tag.find_all("td") # leia kõik read selles päevas
         # töötle läbi üks rida
         for td_tag in td_tags:
             # kursuste nimede leidmine
