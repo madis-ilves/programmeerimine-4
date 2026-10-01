@@ -8,7 +8,7 @@ import requests
 
 def saa_lingid():
     lingid = {}
-    url =  "https://tammegymnaasium.ee/tunniplaanike/view/klass/3ECB72B69D529F51" # ükskõik mis klassi link, et saada kätte TODO: võiks olla "https://tammegymnaasium.ee/tunniplaan/"
+    url =  "https://tammegymnaasium.ee/tunniplaanike/"
     page = requests.get(url) # html
     soup = BeautifulSoup(page.text, features="html.parser")
 
@@ -61,6 +61,8 @@ def saa_info(tunniplaani_link):
             if kursus != None:
                 kursuse_nimi = kursus.text # error kui kursus on None, sest tühi koht selles reas TODO: jäta meelde tühjad kohad ja grupeeri kursused tundidesse
                 praegune_päev.append(kursuse_nimi)
+            #else:
+             #   praegune_päev.append(None)
         
         # üks rida läbi töötatud
         ridu_uue_päevani -= 1
