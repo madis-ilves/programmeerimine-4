@@ -37,35 +37,60 @@ def saa_info(tunniplaani_link):
     ridu_uue_päevani = -1 # mitu <tr> on veel alles selles päevas, alguseks -1; teisisõnu max kursuste arv ühe tunni ajal sel päeval
     # <tr> sees on <td>'d, igaüks on üks tund selles reas
     praegune_päev = [] # praeguse päeva info, temp muutuja, uue päeva alguses salvestatakse see tunniplaani ja kustutatakse
+    praegune_rida = []
+    praegune_päev_on_üks_kursus = [] #selleks, et jätta meelde tühjad kohad reas
     
     # töötle läbi kõik read
     for tr_tag in tr_tags:
-        # kui on uus päev, leia päeva pikkus
+        # kui on uus päev
         if ridu_uue_päevani <= 0: # alguseks on see -1
-            if ridu_uue_päevani != -1: # salvesta praeguse päeva info kui see pole esimene loop(muidu pole midagi salvestada)
-                tunniplaan.append(praegune_päev)
-                praegune_päev = []
+            on_esimene_rida_päevas = True
             päev = tr_tag.find("th")
             päeva_pikkus = int(päev["rowspan"]) # leiab <th> omaduse rowspan väärtuse(ehk mitu tr_tag'i on selles päevas)
+            
+            # salvesta praeguse päeva info kui see pole esimene loop(muidu pole midagi salvestada)
+            if ridu_uue_päevani != -1: 
+                tunniplaan.append(praegune_päev)
+                praegune_päev = []
+                print(praegune_päev_on_üks_kursus)
+                praegune_päev_on_üks_kursus = [] # selleks, et jätta meelde tühjad kohad reas
             ridu_uue_päevani = päeva_pikkus
         
         td_tags = tr_tag.find_all("td") # leia kõik read selles päevas
         # töötle läbi üks rida
-        for td_tag in td_tags:
+        praegune_rida = []
+        koht_reas = -1
+        for td_tag in td_tags:   # kasuta len(td_tags) et teha valmis listid tunniplaani sisse, et saaks lisada asju igale järgmisele reale
+            koht_reas += 1
             # kursuste nimede leidmine
             td_rowspan = int(td_tag["rowspan"])
             if td_rowspan > 1: # tunni ajal on ainult üks kursus
                 kursus = td_tag.find("div", class_ = "celltext")
+                if on_esimene_rida_päevas:
+                    praegune_päev_on_üks_kursus.append(True)
             elif td_rowspan == 1: # tunni ajal on mitu kursust
                 kursus = td_tag.find("div", class_ = "celltext5")
+                if on_esimene_rida_päevas:
+                    praegune_päev_on_üks_kursus.append(False)
             if kursus != None:
-                kursuse_nimi = kursus.text # error kui kursus on None, sest tühi koht selles reas TODO: jäta meelde tühjad kohad ja grupeeri kursused tundidesse
-                praegune_päev.append(kursuse_nimi)
-            #else:
-             #   praegune_päev.append(None)
+                kursuse_nimi = kursus.text # error kui kursus on None, sest tühi koht selles reas; aga mitte ainult üks kursus
+                praegune_rida.append(kursuse_nimi)
+            else:
+                praegune_rida.append(None)
+                
+            if praegune_päev_on_üks_kursus[koht_reas] and on_esimene_rida_päevas: # siis peaks iga ülejäänud rida olema siin kohal None
+                praegune_rida.append("test") # siin peaks olema kõik järgmised read
         
         # üks rida läbi töötatud
+        on_esimene_rida_päevas = False
+        praegune_päev.append(praegune_rida)
         ridu_uue_päevani -= 1
+    
+    #sorteeritud ridadeks
+    
+    
+    
+    
     
     return tunniplaan
 
@@ -76,8 +101,8 @@ def saa_info(tunniplaani_link):
 def print_tunniplaan(tunniplaan):
     for päev in tunniplaan:
         print("\n UUS PÄEV \n")
-        for tund in päev:
-            print(tund)
+        for rida in päev:
+            print(rida)
 
 # funktsioonide kutsumine
 
