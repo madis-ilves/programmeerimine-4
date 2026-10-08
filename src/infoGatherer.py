@@ -21,13 +21,31 @@ def saa_lingid():
         lingid[klassi_nimi] = link
     return lingid
 
+#
+# Tundide ajad
+# tagastab tundide ajad 2d järjendina, välimine on tund ja sisemine on algus ja lõpp
 
-
+def saa_tundide_ajad():
+    url =  "https://tammegymnaasium.ee/tunniplaanike/"
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, features="html.parser")
+    
+    thead = soup.find('thead')
+    ajad = thead.find_all("div", class_ = "aeg")
+    
+    tundide_ajad = []
+    
+    for aeg in ajad:
+        tund = aeg.text.split(" - ")
+        tundide_ajad.append(tund)
+    
+    return tundide_ajad
+        
 #
 # Klassi tunniplaanist info - Madis
-# tagastab tunniplaani järjendina, kus kursus = saa_info(tunniplaani_link)[päev][tund][kursus], päev ja tund on int, kursus ja tunniplaani_link on str
+# tagastab tunniplaani järjendina, kus kursus = saa_tunniplaan(tunniplaani_link)[päev][tund][kursus], päev ja tund on int, kursus ja tunniplaani_link on str
 
-def saa_info(tunniplaani_link):
+def saa_tunniplaan(tunniplaani_link):
     tunniplaan = [] # tunniplaan[päev][tund][kursus]
     tunniplaan_raw = requests.get(tunniplaani_link)
     soup = BeautifulSoup(tunniplaan_raw.text, features="html.parser")
@@ -114,6 +132,9 @@ def print_tunniplaan(tunniplaan):
 
 if __name__ == "__main__":
     lingid = saa_lingid()
+    print(saa_tundide_ajad())
     klass = input("Sisesta klass: ").upper() # nt "12IT"
-    tunniplaan = saa_info(lingid[klass])
-    print_tunniplaan(tunniplaan)
+    tunniplaan = saa_tunniplaan(lingid[klass])
+    #print_tunniplaan(tunniplaan)
+    
+    
