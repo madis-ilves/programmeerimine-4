@@ -39,29 +39,35 @@ def saa_info(tunniplaani_link):
     praegune_päev = [] # praeguse päeva info, temp muutuja, uue päeva alguses salvestatakse see tunniplaani ja kustutatakse
     praegune_rida = []
     praegune_päev_on_üks_kursus = [] #selleks, et jätta meelde tühjad kohad reas
-    
     # töötle läbi kõik read
     for tr_tag in tr_tags:
+        td_tags = tr_tag.find_all("td") # leia kõik read selles päevas
+        
         # kui on uus päev
         if ridu_uue_päevani <= 0: # alguseks on see -1
             on_esimene_rida_päevas = True
             päev = tr_tag.find("th")
             päeva_pikkus = int(päev["rowspan"]) # leiab <th> omaduse rowspan väärtuse(ehk mitu tr_tag'i on selles päevas)
-            
-            # salvesta praeguse päeva info kui see pole esimene loop(muidu pole midagi salvestada)
-            if ridu_uue_päevani != -1: 
-                tunniplaan.append(praegune_päev)
-                praegune_päev = []
-                print(praegune_päev_on_üks_kursus)
-                praegune_päev_on_üks_kursus = [] # selleks, et jätta meelde tühjad kohad reas
             ridu_uue_päevani = päeva_pikkus
-        
-        td_tags = tr_tag.find_all("td") # leia kõik read selles päevas
+
+            # kasuta len(td_tags) et teha valmis listid tunniplaani sisse, et saaks lisada asju igale järgmisele reale
+            kohti_reas = len(td_tags) # max tundide arv
+            for _ in range(kohti_reas):
+                praegune_päev.append([])
+
         # töötle läbi üks rida
         praegune_rida = []
         koht_reas = -1
-        for td_tag in td_tags:   # kasuta len(td_tags) et teha valmis listid tunniplaani sisse, et saaks lisada asju igale järgmisele reale
+        for td_tag in td_tags:
+
             koht_reas += 1
+            if not on_esimene_rida_päevas:
+                for value in praegune_päev_on_üks_kursus[koht_reas:]: # liigu edasi järgmise kohani, kus pole ainult 1 tund(vist)
+                    if value:
+                        koht_reas += 1
+                    else:
+                        break
+    
             # kursuste nimede leidmine
             td_rowspan = int(td_tag["rowspan"])
             if td_rowspan > 1: # tunni ajal on ainult üks kursus
@@ -72,26 +78,24 @@ def saa_info(tunniplaani_link):
                 kursus = td_tag.find("div", class_ = "celltext5")
                 if on_esimene_rida_päevas:
                     praegune_päev_on_üks_kursus.append(False)
-            if kursus != None:
-                kursuse_nimi = kursus.text # error kui kursus on None, sest tühi koht selles reas; aga mitte ainult üks kursus
-                praegune_rida.append(kursuse_nimi)
+            
+            # kursuste nimede salvestamine
+            if kursus != None: # kui kursus on None, siis tühi koht selles reas, aga mitte ainult üks kursus
+                kursuse_nimi = kursus.text 
+                praegune_päev[koht_reas].append(kursuse_nimi)
             else:
-                praegune_rida.append(None)
-                
-            if praegune_päev_on_üks_kursus[koht_reas] and on_esimene_rida_päevas: # siis peaks iga ülejäänud rida olema siin kohal None
-                praegune_rida.append("test") # siin peaks olema kõik järgmised read
+                praegune_päev_on_üks_kursus[koht_reas] = True # kui kursus on None, siis on selles kohas kursused otsas ja selle peaks vahele jätma
+            
         
         # üks rida läbi töötatud
         on_esimene_rida_päevas = False
-        praegune_päev.append(praegune_rida)
         ridu_uue_päevani -= 1
-    
-    #sorteeritud ridadeks
-    
-    
-    
-    
-    
+        # kui tuleb uus päev
+        if ridu_uue_päevani == 0:
+            tunniplaan.append(praegune_päev)
+            praegune_päev = []
+            praegune_päev_on_üks_kursus = [] # selleks, et jätta meelde tühjad kohad reas, elemendid True/False iga tunni kohta
+            
     return tunniplaan
 
 #
@@ -101,10 +105,12 @@ def saa_info(tunniplaani_link):
 def print_tunniplaan(tunniplaan):
     for päev in tunniplaan:
         print("\n UUS PÄEV \n")
-        for rida in päev:
-            print(rida)
+        for tund in päev:
+            print(tund)
 
+#
 # funktsioonide kutsumine
+#
 
 lingid = saa_lingid()
 klass = input("Sisesta klass: ").upper() # nt "12IT"
