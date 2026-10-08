@@ -10,4 +10,4 @@ Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hard
 *Väljund:* kasutaja valitud kursused laetakse tema Google Calendari ülesse nende õigel toimumise ajal, korduvad kuni perioodi lõpuni  
   
   
-Kasutatud on teeke BeautifulSoup ja requests ning Google API
+Kasutatud on teeke requests(HTML saamine), BeautifulSoup(HTML töötlemine), tkinter(kasutajaliides) ning Google API(kalendrisse üleslaadimine)
