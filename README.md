@@ -1,11 +1,12 @@
 # programmeerimine-4  
-projekt  
-Idee on saada tunniplaanist info ja sellega midagi teha, nt google calendari panemine vms; sealhulgas valikainete jms valimine  
+Tarkvaraprojekt, valminud TTG programmeerimise 4. kursuse raames   
+
+**Rühmaliikmed:** Madis, Hardi, Taaniel  
+Ülesannete halduskesskkond Trello: https://trello.com/b/GA9CN42U  
   
-trello: https://trello.com/b/GA9CN42U  
-rühmaliikmed: Madis, Hardi, Taaniel  
-
-töötab ainult ttg kontodega
-
-temp märkmed:  
-teegid: requests et html saada ja beautifulsoup et htmli töödelda  
+  
+*Sisend:* klass, valik selle klassi tunniplaanist leitud kursuste seast(vajalik ka Google sisselogimine; ***OLULINE: Töötab ainult TTG kontoga***)  
+*Väljund:* kasutaja valitud kursused laetakse tema Google Calendari ülesse nende õigel toimumise ajal  
+  
+  
+Kasutatud on teeke BeautifulSoup ja requests ning Google API
