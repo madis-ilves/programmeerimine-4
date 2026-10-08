@@ -112,7 +112,8 @@ def print_tunniplaan(tunniplaan):
 # funktsioonide kutsumine
 #
 
-lingid = saa_lingid()
-klass = input("Sisesta klass: ").upper() # nt "12IT"
-tunniplaan = saa_info(lingid[klass])
-print_tunniplaan(tunniplaan)
+if __name__ == "__main__":
+    lingid = saa_lingid()
+    klass = input("Sisesta klass: ").upper() # nt "12IT"
+    tunniplaan = saa_info(lingid[klass])
+    print_tunniplaan(tunniplaan)
