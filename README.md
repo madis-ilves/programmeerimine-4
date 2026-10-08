@@ -10,7 +10,7 @@ Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hard
 *Sisend:* klass, valik selle klassi tunniplaanist leitud kursuste seast(vajalik ka Google sisselogimine; ***OLULINE: Töötab ainult TTG kontoga***)  
 *Väljund:* kasutaja valitud kursused laetakse tema Google Calendari ülesse nende õigel toimumise ajal, korduvad kuni perioodi lõpuni  
   
-Kasutatud on teeke requests(HTML saamine), BeautifulSoup(HTML töötlemine), tkinter(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
+Kasutatud on teeke *requests*(HTML saamine), *BeautifulSoup*(HTML töötlemine), *tkinter*(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
   
 ### Ülevaade failidest:  
 *testifailid* kaustas on esimese tunni *test_nimi.py* failid  
