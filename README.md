@@ -13,9 +13,9 @@ Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hard
 Kasutatud on teeke requests(HTML saamine), BeautifulSoup(HTML töötlemine), tkinter(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
   
 ### Ülevaade failidest:  
-testifailid kaustas on esimese tunni test_nimi.py failid  
-src/calenderupload.py tegeleb Google Calendariga(Hardi), hetkel prototüüp testimiseks  
-src/infoGatherer.py saab iga klassi nime ja sellele vastava tunniplaani lingi(Hardi), tundide ajad ja kursuste info(Madis)  
-paberprototüüp.png on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
-src/tb-tkinter kaustas on eksperimendid tkinteriga
-src/tb-tkinter/prog-CURRENT.zip failis on esmane, paberprototüübist lähtuv liides(Taaniel), loodud pigem õppeesmärgil, täpsustunud vajaduste jaoks on vaja keerulisemat  
+*testifailid* kaustas on esimese tunni test_nimi.py failid  
+*src/calenderupload.py* tegeleb Google Calendariga(Hardi), hetkel prototüüp testimiseks  
+*src/infoGatherer.py* saab iga klassi nime ja sellele vastava tunniplaani lingi(Hardi), tundide ajad ja kursuste info(Madis)  
+*paberprototüüp.png* on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
+*src/tb-tkinter* kaustas on eksperimendid tkinteriga
+*src/tb-tkinter/prog-CURRENT.zip* failis on esmane, paberprototüübist lähtuv liides(Taaniel), loodud pigem õppeesmärgil, täpsustunud vajaduste jaoks on vaja keerulisemat  
