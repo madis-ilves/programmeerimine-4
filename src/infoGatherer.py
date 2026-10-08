@@ -23,7 +23,7 @@ def saa_lingid():
 
 #
 # Tundide ajad
-# tagastab tundide ajad 2d järjendina, välimine on tund ja sisemine on algus ja lõpp
+# tagastab tundide ajad 2d järjendina(6, 2), välimine on tund ja sisemine on algus ja lõpp
 
 def saa_tundide_ajad():
     url =  "https://tammegymnaasium.ee/tunniplaanike/"
