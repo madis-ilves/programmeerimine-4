@@ -4,7 +4,7 @@ import requests
 
 #
 # Klasside nimed ja tunniplaani lingid - Hardi + Madis tegi ilusamaks
-# tagastab lingid
+# tagastab lingid sõnastikuna, kus link = saa_lingid()[klassi_nimi], link ja klassi_nimi on str
 
 def saa_lingid():
     lingid = {}
@@ -25,7 +25,7 @@ def saa_lingid():
 
 #
 # Klassi tunniplaanist info - Madis
-# tagastab tunniplaani kujul tunniplaan[päev][tund][kursus]
+# tagastab tunniplaani järjendina, kus kursus = saa_info(tunniplaani_link)[päev][tund][kursus], päev ja tund on int, kursus ja tunniplaani_link on str
 
 def saa_info(tunniplaani_link):
     tunniplaan = [] # tunniplaan[päev][tund][kursus]
