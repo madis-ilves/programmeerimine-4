@@ -45,7 +45,7 @@ def get_service():
 
 
 # ---------------------------------------------------------
-# MULTI‑EVENT UPLOADER
+# EVENT UPLOADER
 # ---------------------------------------------------------
 
 def upload_events(events):
@@ -61,7 +61,7 @@ def upload_events(events):
 
 
 # ---------------------------------------------------------
-# EXAMPLE EVENTS LIST (you can add as many as you want)
+# EXAMPLE EVENTS LIST 
 # ---------------------------------------------------------
 
 events_to_upload = [
@@ -91,14 +91,14 @@ events_to_upload = [
 ]
 
 #
-def append_events(name, desc, toimumisaeg, weekday, until):
+def append_events(thelist, name, desc, toimumisaeg, weekday, until):
     codes = ['MO','TU','WE','TH','FR','SA','SU']
     today = datetime.date.today()
     first = min(
         today + datetime.timedelta(days=(codes.index(d) - today.weekday()) % 7)
         for d in weekday.split(',')
     )
-    events_to_upload.append({
+    thelist.append({
         'summary': name,
         'description': desc,
         'start': {'dateTime': f'{first}T{toimumisaeg[0]}:00', 'timeZone': 'Europe/Tallinn'},
@@ -106,6 +106,9 @@ def append_events(name, desc, toimumisaeg, weekday, until):
         'recurrence': [f'RRULE:FREQ=WEEKLY;BYDAY={weekday};UNTIL={until}T235959Z'],
     })
 
-append_events('skill','issue', ['08:45','09:55'], 'MO','20261231')
 
-upload_events(events_to_upload)
+#debug testing functions
+#append_events(events_to_upload,'skill','issue', ['08:45','09:55'], 'MO','20261231')
+
+#upload_events(events_to_upload)
+
