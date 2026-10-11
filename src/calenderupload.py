@@ -77,7 +77,7 @@ events_to_upload = [
             'timeZone': 'Europe/Tallinn'
         },
         'recurrence': [
-            'RRULE:FREQ=WEEKLY;UNTIL=20261231T235959Z'
+            'RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR;UNTIL=20261231T235959Z'
         ]
     },
 
@@ -90,5 +90,22 @@ events_to_upload = [
     # },
 ]
 
+#
+def append_events(name, desc, toimumisaeg, weekday, until):
+    codes = ['MO','TU','WE','TH','FR','SA','SU']
+    today = datetime.date.today()
+    first = min(
+        today + datetime.timedelta(days=(codes.index(d) - today.weekday()) % 7)
+        for d in weekday.split(',')
+    )
+    events_to_upload.append({
+        'summary': name,
+        'description': desc,
+        'start': {'dateTime': f'{first}T{toimumisaeg[0]}:00', 'timeZone': 'Europe/Tallinn'},
+        'end':   {'dateTime': f'{first}T{toimumisaeg[1]}:00', 'timeZone': 'Europe/Tallinn'},
+        'recurrence': [f'RRULE:FREQ=WEEKLY;BYDAY={weekday};UNTIL={until}T235959Z'],
+    })
+
+append_events('skill','issue', ['08:45','09:55'], 'MO','20261231')
 
 upload_events(events_to_upload)
