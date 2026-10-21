@@ -7,7 +7,7 @@ lingid = saa_lingid()
 tunniajad = saa_tundide_ajad()
 klass = input("Sisesta klass: ").upper() # nt "12IT"
 tunniplaan = saa_tunniplaan(lingid[klass])
-
+valikained = []
 tunniuploadimiseks = [] #google calender api vormis list
 #    example append_events(events_to_upload,'skill','issue', ['08:45','09:55'], 'MO','20261231')
 day = 0
@@ -28,6 +28,8 @@ for paev in tunniplaan:
                 if tund == paev[6]:
                     if string != 'Järelevastamine' and '(v)' not in string:
                         string += '(v)'
+                        if string not in valikained:
+                            valikained.append(aine)
                 name = string
             elif len(tund)== 0:
                 name = 'no tund'
@@ -39,7 +41,8 @@ for paev in tunniplaan:
                         same = False
                     if '(v)' in aine:
                         valik = True
-                    
+                        if aine not in valikained:
+                            valikained.append(aine)
                 if same == True:
                     name = tund[0]
                 elif same == False and valik == False:
@@ -66,4 +69,5 @@ for paev in tunniplaan:
     day+=1 #brute force paeva järgimine
     
     
+print(valikained)
 upload_events(tunniuploadimiseks)
