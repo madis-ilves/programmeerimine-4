@@ -70,4 +70,4 @@ for paev in tunniplaan:
     
     
 print(valikained)
-upload_events(tunniuploadimiseks)
+#upload_events(tunniuploadimiseks)

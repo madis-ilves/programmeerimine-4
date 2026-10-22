@@ -136,5 +136,9 @@ if __name__ == "__main__":
     klass = input("Sisesta klass: ").upper() # nt "12IT"
     tunniplaan = saa_tunniplaan(lingid[klass])
     #print_tunniplaan(tunniplaan)
-    
+    #print(tunniplaan)
+    klassid = []
+    for key in lingid:
+        klassid.append(key)
+    print(klassid)
     

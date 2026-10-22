@@ -2,6 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 import sys
 
+# replace these with func
+tunniplaan = [[['Konsultatsioon'], ['Inglise keele lisakursus, C1(v)', 'Inglise keele lisakursus, C1(v)'], ['Lai matemaatika', 'Lai matemaatika', 'Lai matemaatika'], ['Eesti keel'], ['Ajalugu'], ['Keskkond ja tervis(v)', 'Rootsi keel(v)', 'Praktiline kunst(v)', 'Rahvusarhiivi kursus', 'Inglise keele lisakursus, C1(v)'], ['Rahvusarhiivi kursus']], [['Konsultatsioon'], ['Inglise keele lisakursus, C1(v)', 'Inglise keele lisakursus, C1(v)', 'Inglise keele lisakursus, C1(v)'], ['Kehaline kasvatus', 'Eesti keel'], ['Lai matemaatika', 'Lai matemaatika', 'Lai matemaatika'], ['Inglise keel (B2)', 'Inglise keel (B2)'], [], ['Segakoor(v)']], [['Konsultatsioon'], ['Lai matemaatika', 'Lai matemaatika', 'Lai matemaatika'], ['Kirjandus'], ['Inimeseõpetus'], ['Inglise keel (B2)', 'Inglise keel (B2)'], ['Klassijuhatajatund/K5 üritused'], []], [['Konsultatsioon'], ['Programmeerimine'], ['Lai matemaatika', 'Lai matemaatika', 'Lai matemaatika'], ['Kehaline kasvatus', 'Eesti keel'], ['Karjääriõpetus'], ['Keskkond ja tervis(v)', 'Rootsi keel(v)', 'Praktiline kunst(v)', 'Inglise keele lisakursus, C1(v)'], ['Järelevastamine']], [['Konsultatsioon'], ['Ettevalmistus olümpiaadiks', 'Segakoor(v)', 'Inglise keele lisakursus, C1(v)'], ['Inimeseõpetus'], ['Kirjandus'], ['Ajalugu'], [], []]]
+klassid = ['10IT', '10KU', '10LO', '10ME', '10TE', '10TH', '11IT', '11KU', '11LO', '11ME', '11TE', '12IT', '12KU', '12LO', '12ME', '12TE']
+
+def plaan(klassid, tunniplaan):
+    valik = klass.get()
+    print(valik)
 def kill():
     root.destroy()
     sys.exit()
@@ -9,7 +16,7 @@ def kill():
 def magic(event):
     #where the magic happens
     #10IT
-    if klass.get() == "10 IT":
+    if klass.get() == "10IT":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)", "Rahvusarhiiv"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)"])
         varia1.config(values=["Lai matemaatika (212)", "Lai matemaatika (315)", "Lai matemaatika (340)"])
@@ -35,9 +42,30 @@ def magic(event):
         txte12 = ttk.Label(root, text="Sissejuhatus\nIT-sse(225)", font='arial 11 bold')
         txte13 = ttk.Label(root, text="Keemia\n(209)", font='arial 11 bold')
         
-
         
-    elif klass.get() == "10 KU":
+        txte1.place(x=250, y=200) #esmap algus
+        varia1.place(x = 230, y = 300)
+        txte2.place(x=250, y=400)
+        txte3.place(x=250, y=500)
+        box1.place(x = 245, y = 700)
+        varia5.place(x = 430, y = 200) #teisip algus
+        txte4.place(x=440, y=300)
+        varia2.place(x = 430, y = 400)
+        txte5.place(x=440, y=500)
+        txte6.place(x=440, y=600)
+        varia3.place(x = 630, y = 200) #kolmap algus
+        txte7.place(x=640, y=300)
+        txte8.place(x=640, y=400)
+        txte9.place(x=640, y=500)
+        txte10.place(x = 830, y = 200)#neljap algus
+        varia4.place(x = 830, y = 300)
+        txte11.place(x = 830, y = 450)
+        varia6.place(x = 1030, y = 300) #reede algus
+        txte12.place(x=1050, y=400)
+        varia7.place(x = 1030, y = 500)
+        txte13.place(x = 1030, y = 600)
+        
+    elif klass.get() == "10KU":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Rootsi keel (312)"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Rootsi keel (312)", "Vene keele ABC (329)"])
         varia1.config(values=["Lai matemaatika (312)", "Lai matemaatika (316)", "Kitsas matemaatika (212)"])
@@ -62,8 +90,30 @@ def magic(event):
         txte10 = ttk.Label(root, text="Usundid\n(209)", font='arial 11 bold')
         txte11 = ttk.Label(root, text="Kirjandus\n(309)", font='arial 11 bold')
         txte12 = ttk.Label(root, text="Geograafia\n(212)", font='arial 11 bold')
+    
+        varia1.place(x=250, y=200) #esmap algus
+        txte1.place(x = 230, y = 300)
+        txte2.place(x=250, y=400)
+        txte3.place(x=250, y=500)
+        varia2.place(x = 430, y = 200) #teisip algus
+        txte4.place(x=440, y=300)
+        varia8.place(x = 430, y = 400)
+        varia3.place(x=440, y=500)
+        txte5.place(x=440, y=600)
+        txte6.place(x = 630, y = 200) #kolmap algus
+        txte7.place(x=640, y=300)
+        varia5.place(x=640, y=400)
+        txte8.place(x=640, y=500)
+        varia6.place(x = 830, y = 200)#neljap algus
+        txte9.place(x = 830, y = 300)
+        varia7.place(x = 830, y = 400)
+        txte10.place(x = 830, y = 500)
+        txte11.place(x = 1030, y = 300) #reede algus
+        varia9.place(x=1050, y=400)
+        txte12.place(x = 1030, y = 500)
+        varia8.place(x = 1030, y = 600)
         
-    elif klass.get() == "10 LO":
+    elif klass.get() == "10LO":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)", "Vene keele ABC (329)"])
         varia1.config(values=["Lai matemaatika (312)", "Lai matemaatika (316)"])
@@ -89,8 +139,30 @@ def magic(event):
         txte13 = ttk.Label(root, text="Bioloogia\n(205)", font='arial 11 bold')
         txte14 = ttk.Label(root, text="Ajalugu\n(215)", font='arial 11 bold')
     
+    
+        varia1.place(x=250, y=200) #esmap algus
+        varia6.place(x = 230, y = 300)
+        txte1.place(x=250, y=400)
+        txte2.place(x=250, y=500)
+        varia2.place(x = 430, y = 200) #teisip algus
+        txte3.place(x=440, y=300)
+        txte4.place(x = 430, y = 400)
+        varia3.place(x=440, y=500)
+        txte5.place(x=440, y=600)
+        varia7.place(x = 630, y = 200) #kolmap algus
+        txte6.place(x=640, y=300)
+        varia4.place(x=640, y=400)
+        txte7.place(x=640, y=500)
+        varia5.place(x = 830, y = 200)#neljap algus
+        txte8.place(x = 830, y = 300)
+        txte9.place(x = 830, y = 400)
+        txte10.place(x = 830, y = 500)
+        txte11.place(x = 1030, y = 300) #reede algus
+        txte12.place(x=1050, y=400)
+        txte13.place(x = 1030, y = 500)
+        txte14.place(x = 1030, y = 600)
         
-    elif klass.get() == "10 ME":
+    elif klass.get() == "10ME":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Rootsi keel (312)", "Rahvusarhiiv"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Rootsi keel (312)", "Vene keele ABC (329)"])
         varia1.config(values=["Lai matemaatika (212)", "Lai matemaatika (315)", "Lai matemaatika (340)"])
@@ -117,8 +189,29 @@ def magic(event):
         txte9 = ttk.Label(root, text="Füüsika\n(206)", font='arial 11 bold')
         txte10 = ttk.Label(root, text="Keemia\n(332)", font='arial 11 bold')
         
-
-    elif klass.get() == "10 TE":
+        txte1.place(x=250, y=200) #esmap algus
+        varia1.place(x = 230, y = 300)
+        txte2.place(x=250, y=400)
+        txte3.place(x=250, y=500)
+        box1.place(x = 245, y = 700)
+        varia2.place(x = 430, y = 200) #teisip algus
+        txte4.place(x=440, y=300)
+        varia3.place(x = 430, y = 400)
+        varia10.place(x=440, y=550)
+        varia5.place(x=630, y=200) #kolmap algus
+        txte5.place(x=640, y=300)
+        txte6.place(x=640, y=400)
+        txte7.place(x=640, y=500)
+        txte8.place(x = 830, y = 200)#neljap algus
+        varia4.place(x = 830, y = 300)
+        varia6.place(x = 830, y = 400)
+        txte9.place(x = 830, y = 500) 
+        varia8.place(x=1050, y=300) #reede algus
+        txte10.place(x = 1030, y = 400)
+        varia9.place(x = 1030, y = 500)
+        varia7.place(x = 1030, y = 600)
+        
+    elif klass.get() == "10TE":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Praktiline kunst (341)", "Rootsi keel (312)", "Psühholoogia (212)"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Psühholoogia (212)", "Praktiline kunst (341)", "Rootsi keel (312)", "Vene keele ABC (329)"])
         varia1.config(values=["Lai matemaatika (312)", "Lai matemaatika (315)", "Lai matemaatika (316)"])
@@ -141,9 +234,28 @@ def magic(event):
         txte8 = ttk.Label(root, text="3D modelleerimine\n(225)", font='arial 11 bold')
         txte9 = ttk.Label(root, text="Füüsika\n(206)", font='arial 11 bold')
         txte10 = ttk.Label(root, text="Bioloogia\n(332)", font='arial 11 bold')
-
         
-    if klass.get() == "10 TH":
+        txte1.place(x=250, y=200) #esmap algus
+        varia8.place(x = 230, y = 300)
+        varia1.place(x=250, y=400)
+        txte2.place(x=250, y=500)
+        varia2.place(x = 430, y = 200) #teisip algus
+        varia3.place(x=440, y=300)
+        txte3.place(x = 430, y = 400)
+        txte4.place(x=440, y=550)
+        varia9.place(x = 630, y = 200) #kolmap algus
+        varia4.place(x=640, y=300)
+        txte5.place(x=640, y=400)
+        txte6.place(x=640, y=500)
+        txte7.place(x = 830, y = 250)#neljap algus
+        varia6.place(x = 830, y = 400)
+        txte8.place(x = 830, y = 500)
+        varia5.place(x = 1030, y = 300) #reede algus
+        txte9.place(x=1050, y=400)
+        txte10.place(x = 1030, y = 500)
+        varia7.place(x = 1030, y = 600)
+        
+    if klass.get() == "10TH":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)", "Rootsi keel (312)", "Rahvusarhiiv"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)", "Rootsi keel (312)", "Vene keele ABC (329)"])
         varia1.config(values=["Geograafia", "Eesti keel (ek1)", "Lai matemaatika (SG)", "Lai matemaatika (ÜP)", "Lai matemaatika (HS)", "Füüsika", "Matemaatika ABC (SG)", "Matemaatika ABC (HS)", "Matemaatika ABC (ÜP)", "Kehaline (GO4/GH2)", "Joonestamine", "Muusika", "Kirjandus", "Ennastjuhtiv õppija", "Bioloogia", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek2)"])
@@ -168,7 +280,29 @@ def magic(event):
         varia20.config(values=["Geograafia", "Eesti keel (ek1)", "Lai matemaatika (SG)", "Lai matemaatika (ÜP)", "Lai matemaatika (HS)", "Füüsika", "Matemaatika ABC (SG)", "Matemaatika ABC (HS)", "Matemaatika ABC (ÜP)", "Kehaline (GO4/GH2)", "Joonestamine", "Muusika", "Kirjandus", "Ennastjuhtiv õppija", "Bioloogia", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek2)"])
         varia21.config(values=["Geograafia", "Eesti keel (ek1)", "Lai matemaatika (SG)", "Lai matemaatika (ÜP)", "Lai matemaatika (HS)", "Füüsika", "Matemaatika ABC (SG)", "Matemaatika ABC (HS)", "Matemaatika ABC (ÜP)", "Kehaline (GO4/GH2)", "Joonestamine", "Muusika", "Kirjandus", "Ennastjuhtiv õppija", "Bioloogia", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek2)"])
         
-    if klass.get() == "11 IT":
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
+        
+    if klass.get() == "11IT":
         valik1.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Praktiline kunst (341)", "Psühholoogia (212)", "Rootsi keel (312)", "3D modelleerimine (225)"])
         valik2.config(values=["Religioon (309)", "Keskkond ja tervis (205)", "Loovkirjutamine (305)", "Praktiline kunst (341)", "Psühholoogia (212)", "Rootsi keel (312)", "3D modelleerimine (225)"])
         varia1.config(values=["Ajalugu", "Füüsika", "Lai matemaatika (LL)", "Lai matemaatika (MJ)", "Lai matemaatika (NM)", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek1)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Veebidisain", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (Grupp 1)", "UPT alused (Grupp 2)", "Kehaline kasvatus (GH2/GO4)", "Eesti keel (ek1)", "Bioloogia", "Muusika", "Eesti keel"])
@@ -193,8 +327,29 @@ def magic(event):
         varia20.config(values=["Ajalugu", "Füüsika", "Lai matemaatika (LL)", "Lai matemaatika (MJ)", "Lai matemaatika (NM)", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek1)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Veebidisain", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (Grupp 1)", "UPT alused (Grupp 2)", "Kehaline kasvatus (GH2/GO4)", "Eesti keel (ek1)", "Bioloogia", "Muusika", "Eesti keel"])
         #varia21.config(values=["Ajalugu", "Füüsika", "Lai matemaatika (LL)", "Lai matemaatika (MJ)", "Lai matemaatika (NM)", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek1)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Veebidisain", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (Grupp 1)", "UPT alused (Grupp 2)", "Kehaline kasvatus (GH2/GO4)", "Eesti keel (ek1)", "Bioloogia", "Muusika", "Eesti keel"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "11 KU":
+    if klass.get() == "11KU":
         valik1.config(values=["Keskkond ja tervis (205)", "Praktiline kunst (341)", "Loovkirjutamine", "Rahvusarhiiv"])
         valik2.config(values=["Keskkond ja tervis (205)", "Praktiline kunst (341)", "Loovkirjutamine"])
         box1 = tk.Checkbutton(root, text='Rahvusarhiiv', onvalue=1, offvalue=0, font='arial 11 bold')
@@ -220,8 +375,30 @@ def magic(event):
         varia19.config(values=["Keemia", "Kunst", "Füüsika", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek2)", "UPT alused (Grupp 1)", "UPT alused (Grupp 2)", "Inglise keel (AL10)", "Prantsuse keel (PRA2)", "Soome keel (SOO1)", "Inglise keel (MS9)", "Saksa keel (sak2)", "Kehaline kasvatus (GH2/GO4)", "Eesti keel (ek1)", "Globaliseerunud maailm", "Ajalugu", "Inglise keel (ID7)", "Vene keel (vk2)", "Inglise keel (MM8)", "Hispaania keel (HIS3)", "Lai matemaatika (NM)", "Lai/kitsas matemaatika (LL)", "Eesti keel"])
         varia20.config(values=["Keemia", "Kunst", "Füüsika", "Kehaline kasvatus (GH1/GO3)", "Eesti keel (ek2)", "UPT alused (Grupp 1)", "UPT alused (Grupp 2)", "Inglise keel (AL10)", "Prantsuse keel (PRA2)", "Soome keel (SOO1)", "Inglise keel (MS9)", "Saksa keel (sak2)", "Kehaline kasvatus (GH2/GO4)", "Eesti keel (ek1)", "Globaliseerunud maailm", "Ajalugu", "Inglise keel (ID7)", "Vene keel (vk2)", "Inglise keel (MM8)", "Hispaania keel (HIS3)", "Lai matemaatika (NM)", "Lai/kitsas matemaatika (LL)", "Eesti keel"])
         
+        box1.place(x = 245, y = 700)
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "11 LO":
+    if klass.get() == "11LO":
         valik1.config(values=["Keskkond ja tervis (205)", "Praktiline kunst (341)", "Loovkirjutamine", "3D modelleerimine", "Religioon"])
         valik2.config(values=["Keskkond ja tervis (205)", "Praktiline kunst (341)", "Loovkirjutamine", "3D modelleerimine", "Religioon"])
         varia1.config(values=["Kehaline kasvatus (grupp 1)", "Kehaline kasvatus (grupp 2)", "Keemia", "Ajalugu", "Ökoloogia", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (AL10)", "Prantuse keel (PRA2)", "Soome keel (SOO1)", "Inglise keel (MS9)", "Saksa keel (sak2)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Lai matemaatika (SG)", "Füüsika", "Kirjandus", "Muusika", "Inglise keel (B2)", "Vene keel (vk2)", "Inglise keel (MM8)", "Hispaania keel (HIS3)"])
@@ -245,8 +422,29 @@ def magic(event):
         varia19.config(values=["Kehaline kasvatus (grupp 1)", "Kehaline kasvatus (grupp 2)", "Keemia", "Ajalugu", "Ökoloogia", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (AL10)", "Prantuse keel (PRA2)", "Soome keel (SOO1)", "Inglise keel (MS9)", "Saksa keel (sak2)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Lai matemaatika (SG)", "Füüsika", "Kirjandus", "Muusika", "Inglise keel (B2)", "Vene keel (vk2)", "Inglise keel (MM8)", "Hispaania keel (HIS3)"])
         varia20.config(values=["Kehaline kasvatus (grupp 1)", "Kehaline kasvatus (grupp 2)", "Keemia", "Ajalugu", "Ökoloogia", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (AL10)", "Prantuse keel (PRA2)", "Soome keel (SOO1)", "Inglise keel (MS9)", "Saksa keel (sak2)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Lai matemaatika (SG)", "Füüsika", "Kirjandus", "Muusika", "Inglise keel (B2)", "Vene keel (vk2)", "Inglise keel (MM8)", "Hispaania keel (HIS3)"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "11 ME":
+    if klass.get() == "11ME":
         valik1.config(values=["Loovkirjutamine", "Rootsi keel", "Praktiline kunst"])
         valik2.config(values=["Loovkirjutamine", "Rootsi keel", "Praktiline kunst"])
         varia1.config(values=["Kirjandus", "Ajalugu", "Geograafia", "Inglise keel (MS1)", "Hispaania keel (HISP1)", "Kehaline kasvatus (GH)", "Kehaline kasvatus (GO)", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Sissejuhatus haigustesste (grupp 1)", "Veterinaaria", "Muusika", "Lai matemaatika (SG)", "Lai matemaatika (MJ)", "Lai matemaatika (ÜP)", "Keemia", ])
@@ -270,8 +468,29 @@ def magic(event):
         varia19.config(values=["Kirjandus", "Ajalugu", "Geograafia", "Inglise keel (MS1)", "Hispaania keel (HISP1)", "Kehaline kasvatus (GH)", "Kehaline kasvatus (GO)", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Sissejuhatus haigustesste (grupp 1)", "Veterinaaria", "Muusika", "Lai matemaatika (SG)", "Lai matemaatika (MJ)", "Lai matemaatika (ÜP)", "Keemia", ])
         varia20.config(values=["Kirjandus", "Ajalugu", "Geograafia", "Inglise keel (MS1)", "Hispaania keel (HISP1)", "Kehaline kasvatus (GH)", "Kehaline kasvatus (GO)", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Sissejuhatus haigustesste (grupp 1)", "Veterinaaria", "Muusika", "Lai matemaatika (SG)", "Lai matemaatika (MJ)", "Lai matemaatika (ÜP)", "Keemia", ])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "11 TE":
+    if klass.get() == "11TE":
         valik1.config(values=["3D modelleerimine", "Religioon", "Praktiline kunst", "Psühholoogia"])
         valik2.config(values=["3D modelleerimine", "Religioon", "Praktiline kunst", "Psühholoogia"])    
         varia1.config(values=["Ajalugu", "Keemia", "Lai matemaatika (LL)", "Lai matemaatika (340)", "Lai matemaatika (MJ)", "Geograafia", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "Eesti keel", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Eesti keel (ek2)", "Kehaline kasvatus (GO2)", "Bioloogia", "Muusika", "Eesti keel (ek1)", "Kehaline kasvatus (GH1)"])
@@ -295,8 +514,29 @@ def magic(event):
         varia19.config(values=["Ajalugu", "Keemia", "Lai matemaatika (LL)", "Lai matemaatika (340)", "Lai matemaatika (MJ)", "Geograafia", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "Eesti keel", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Eesti keel (ek2)", "Kehaline kasvatus (GO2)", "Bioloogia", "Muusika", "Eesti keel (ek1)", "Kehaline kasvatus (GH1)"])
         varia20.config(values=["Ajalugu", "Keemia", "Lai matemaatika (LL)", "Lai matemaatika (340)", "Lai matemaatika (MJ)", "Geograafia", "Inglise keel (MS2)", "Saksa keel (sak1)", "Vene keel (vk1)", "Prantsuse keel (pra1)", "Inglise keel (AL6)", "Soome keel (SOO2)", "Inglise keel (ID5)", "Eesti keel", "UPT alused (grupp 1)", "UPT alused (grupp 2)", "Inglise keel (ID3)", "Hispaania keel (HISP2)", "Inglise keel (AL4)", "Saksa keel (SAK3)", "Eesti keel (ek2)", "Kehaline kasvatus (GO2)", "Bioloogia", "Muusika", "Eesti keel (ek1)", "Kehaline kasvatus (GH1)"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "12 IT":
+    if klass.get() == "12IT":
         valik1.config(values=["Keskkond ja tervis", "Praktiline kunst", "Rootsi keel", "Rahvusarhiiv", "Inglise keel C1 (C1-ID)"])
         valik2.config(values=["Keskkond ja tervis", "Praktiline kunst", "Rootsi keel", "Inglise keel C1 (C1-ID)"])
         r1.config(values=["Segakoor", "Olümpiaadikursus", "Inglise keel C1 (C1-ID)"])
@@ -322,8 +562,28 @@ def magic(event):
         varia18.config(values=["Inglise keel C1 (C1-AL)", "Inglise keel C1 (C1-MS)", "Lai matemaatika (LL)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Eesti keel", "Ajalugu", "Inglise keel C1 (C1-ID)", "Eesti keel (EK2)", "Kehaline kasvatus (GH)", "Inglise keel B2 (ID2)", "Inglise keel B2 (MS7)", "Kirjandus", "Inimeseõpetus", "Programmeerimine", "Eesti keel (EK1)", "Kehaline kasvatus (GO)", "Karjääriõpetus"])
         varia19.config(values=["Inglise keel C1 (C1-AL)", "Inglise keel C1 (C1-MS)", "Lai matemaatika (LL)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Eesti keel", "Ajalugu", "Inglise keel C1 (C1-ID)", "Eesti keel (EK2)", "Kehaline kasvatus (GH)", "Inglise keel B2 (ID2)", "Inglise keel B2 (MS7)", "Kirjandus", "Inimeseõpetus", "Programmeerimine", "Eesti keel (EK1)", "Kehaline kasvatus (GO)", "Karjääriõpetus"])
         
+        box1.place(x = 245, y = 700)
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
         
-    if klass.get() == "12 KU":
+    if klass.get() == "12KU":
         valik1.config(values=["Religioon", "Loovkirjutamine", "Inglise keel C1 (C1-ID)"])
         valik2.config(values=["Religioon", "Loovkirjutamine", "Inglise keel C1 (C1-ID)", "Inglise keel C1 (C1-AL)"])
         r1.config(values=["Segakoor", "Olümpiaadikursus", "Inglise keel C1 (C1-ID)"])
@@ -348,8 +608,29 @@ def magic(event):
         varia19.config(values=["Lai matemaatika (NM)", "Lai matemaatika (LL)", "Lai matemaatika (HS)", "Lai matemaatika (SG)", "Inglise keel C1 (C1-AL)", "Eesti keel", "Inglise keel B2 (ID9)", "Inglise keel B2 (AL5)", "Ühiskonnaõpetus", "Inglise keel C1 (C1-ID)", "Füüsika", "Arheoloogia", "Poeetika", "Kultuuriprojekt (MK)", "Kultuuriprojekt (LR)", "Kultuuriprojekt (AL/KR)", "Karjääriõpetus", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)"])
         varia20.config(values=["Lai matemaatika (NM)", "Lai matemaatika (LL)", "Lai matemaatika (HS)", "Lai matemaatika (SG)", "Inglise keel C1 (C1-AL)", "Eesti keel", "Inglise keel B2 (ID9)", "Inglise keel B2 (AL5)", "Ühiskonnaõpetus", "Inglise keel C1 (C1-ID)", "Füüsika", "Arheoloogia", "Poeetika", "Kultuuriprojekt (MK)", "Kultuuriprojekt (LR)", "Kultuuriprojekt (AL/KR)", "Karjääriõpetus", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "12 LO":
+    if klass.get() == "12LO":
         valik1.config(values=["Praktiline kunst", "Loovkirjutamine", "Inglise keel C1 (C1-ID)"])
         valik2.config(values=["Religioon", "Loovkirjutamine", "Inglise keel C1 (C1-ID)", "Inglise keel C1 (C1-AL)"])
         varia1.config(values=["Lai matemaatika (LL)", "Lai matemaatika (NM)", "Lai matemaatika (SG)", "Inglise keel B2 (ID8)", "Inglise keel B2 (AL10)", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Keemia", "Eesti keel", "Kirjandus", "Geoinformaatika", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)", "Karjääriõprtus", "Inimeseõpetus", "Biotehnoloogia"])
@@ -372,8 +653,28 @@ def magic(event):
         varia18.config(values=["Lai matemaatika (LL)", "Lai matemaatika (NM)", "Lai matemaatika (SG)", "Inglise keel B2 (ID8)", "Inglise keel B2 (AL10)", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Keemia", "Eesti keel", "Kirjandus", "Geoinformaatika", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)", "Karjääriõprtus", "Inimeseõpetus", "Biotehnoloogia"])
         varia19.config(values=["Lai matemaatika (LL)", "Lai matemaatika (NM)", "Lai matemaatika (SG)", "Inglise keel B2 (ID8)", "Inglise keel B2 (AL10)", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Keemia", "Eesti keel", "Kirjandus", "Geoinformaatika", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)", "Karjääriõprtus", "Inimeseõpetus", "Biotehnoloogia"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
         
-    if klass.get() == "12 ME":
+    if klass.get() == "12ME":
         valik1.config(values=["Keskkond ja tervis", "Loovkirjutamine", "Praktiline kunst", "Inglise keel C1 (C1-ID)"])
         valik2.config(values=["Religioon", "Loovkirjutamine", "Inglise keel C1 (C1-ID)", "Praktiline kunst", "Inglise keel C1 (C1-AL)"])
         r1.config(values=["Segakoor", "Olümpiaadikursus", "Inglise keel C1 (C1-ID)"])
@@ -398,35 +699,56 @@ def magic(event):
         varia19.config(values=["Inglise keel B2 (ID3)", "Inglise keel C1 (C1-MS)", "Lai matemaatika", "Kirjandus", "KunsT", "inglise keel C1 (C1-MS)", "Ühiskonnaõpetus", "Eesti keel", "Eesti keel (EK1)", "Eesti keel (EK2)", "Kehaline kasvatus (GO2)", "Kehaline kasvatus (GH1)", "Füüsika", "Biotehnoloogia", "Karjääriõpetus"])
         varia20.config(values=["Inglise keel B2 (ID3)", "Inglise keel C1 (C1-MS)", "Lai matemaatika", "Kirjandus", "KunsT", "inglise keel C1 (C1-MS)", "Ühiskonnaõpetus", "Eesti keel", "Eesti keel (EK1)", "Eesti keel (EK2)", "Kehaline kasvatus (GO2)", "Kehaline kasvatus (GH1)", "Füüsika", "Biotehnoloogia", "Karjääriõpetus"])
         
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
-    if klass.get() == "12 TE":
+    if klass.get() == "12TE":
         valik1.config(values=["3D modelleerimine", "Religioon", "Praktiline kunst"])
         valik2.config(values=["3D modelleerimine", "Religioon", "Praktiline kunst"])
         r1.config(values=["Segakoor", "Olümpiaadikursus", "Inglise keel C1 (C1-MM)"])
         varia1.config(values=["Inglise keel C1 (C1-AL)", "inglise keel C1 (C1-MM)", "lai matemaatika (LL)", "Lai matemaatika (ÜP)", "Lai matemaatika (MJ)", "Eesti keel (EK2)", "Kehaline kasvatus (GH1)", "Inglise keel B2 (AL4)", "Inglise keel B2 (MM6)", "Eesti keel (EK1)", "Kehaline kasvatus (GO2)", "Kirjandus", "Ühiskonnaõpetus", "Eesti keel", "Ajalugu", "Praktiline füüsika"])
         
         
-    varia1.place(x=250, y=200) #esmap algus
-    varia2.place(x = 230, y = 300)
-    varia3.place(x=250, y=400)
-    varia4.place(x=250, y=500)
-    varia5.place(x = 430, y = 200) #teisip algus
-    varia6.place(x=440, y=300)
-    varia7.place(x = 430, y = 400)
-    varia8.place(x=440, y=500)
-    varia21.place(x=440, y=600)
-    varia9.place(x=630, y=200) #kolmap algus
-    varia10.place(x=640, y=300)
-    varia11.place(x=640, y=400)
-    varia12.place(x=640, y=500)
-    varia13.place(x = 830, y = 200)#neljap algus
-    varia14.place(x = 830, y = 300)
-    varia15.place(x = 830, y = 400)
-    varia16.place(x = 830, y = 500) 
-    varia17.place(x=1050, y=300) #reede algus
-    varia18.place(x = 1030, y = 400)
-    varia19.place(x = 1030, y = 500)
-    varia20.place(x = 1030, y = 600)
+        varia1.place(x=250, y=200) #esmap algus
+        varia2.place(x = 230, y = 300)
+        varia3.place(x=250, y=400)
+        varia4.place(x=250, y=500)
+        varia5.place(x = 430, y = 200) #teisip algus
+        varia6.place(x=440, y=300)
+        varia7.place(x = 430, y = 400)
+        varia8.place(x=440, y=500)
+        varia21.place(x=440, y=600)
+        varia9.place(x=630, y=200) #kolmap algus
+        varia10.place(x=640, y=300)
+        varia11.place(x=640, y=400)
+        varia12.place(x=640, y=500)
+        varia13.place(x = 830, y = 200)#neljap algus
+        varia14.place(x = 830, y = 300)
+        varia15.place(x = 830, y = 400)
+        varia16.place(x = 830, y = 500) 
+        varia17.place(x=1050, y=300) #reede algus
+        varia18.place(x = 1030, y = 400)
+        varia19.place(x = 1030, y = 500)
+        varia20.place(x = 1030, y = 600)
         
     #reveals timetable
     txte.place(x =240, y = 125)
@@ -466,7 +788,7 @@ txt0 = ttk.Label(root, text="Vali oma klass:")
 txt0.pack(pady=5)
 txt0.place(x = 230, y = 25)
 
-klass = ttk.Combobox(root, values=["10 IT", "10 KU", "10 LO", "10 ME", "10 TE", "10 TH", "11 IT", "11 KU", "11 LO", "11 ME", "11 TE", "12 IT", "12 KU", "12 LO", "12 ME", "12 TE"], state="readonly")
+klass = ttk.Combobox(root, values=klassid, state="readonly")
 klass.pack(pady=5)
 klass.bind("<<ComboboxSelected>>", magic)
 klass.place(x = 200, y = 50)
