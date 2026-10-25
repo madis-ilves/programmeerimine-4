@@ -1,4 +1,4 @@
-# programmeerimine-4
+# googleplaan
 Graafilise kasutajaliidesega programm, eesmärgiks siduda TTG tunniplaan Google Calendariga  
 Valminud TTG programmeerimise 4. kursuse raames  
 **Kasutamiseks käivitada *src/main.py***  
