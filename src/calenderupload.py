@@ -111,4 +111,3 @@ def append_events(thelist, name, desc, toimumisaeg, weekday, until):
 #append_events(events_to_upload,'skill','issue', ['08:45','09:55'], 'MO','20261231')
 
 #upload_events(events_to_upload)
-
