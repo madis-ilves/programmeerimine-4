@@ -4,7 +4,7 @@ Valminud TTG programmeerimise 4. kursuse raames
 ### Projekti haldus  
 **Rühmaliikmed:** Madis, Hardi, Taaniel  
 Ülesannete halduskesskkond Trello: https://trello.com/b/GA9CN42U  
-Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hardi - HTML saamine, kalendrisse laadimine; Taaniel - kasutajaliides  
+Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hardi - HTML saamine, kalendrisse laadimine ja kõige kokku panemine; Taaniel - kasutajaliides  
   
 ## Täpsem info  
 Kasutatud on teeke *requests*(HTML saamine), *BeautifulSoup*(HTML töötlemine), *tkinter*(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
