@@ -7,18 +7,22 @@ Valminud TTG programmeerimise 4. kursuse raames
 Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hardi - HTML saamine, kalendrisse laadimine; Taaniel - kasutajaliides  
   
 ## Täpsem info  
+Kasutatud on teeke *requests*(HTML saamine), *BeautifulSoup*(HTML töötlemine), *tkinter*(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
+google api alla laadimiseks tuleb kasutada käsklust:  
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib 
+
 *Sisend:* klass, valik selle klassi tunniplaanist leitud kursuste seast(vajalik ka Google sisselogimine; ***OLULINE: Töötab ainult TTG kontoga***)  
 *Väljund:* kasutaja valitud kursused laetakse tema Google Calendari ülesse nende õigel toimumise ajal, korduvad kuni perioodi lõpuni  
   
-Kasutatud on teeke *requests*(HTML saamine), *BeautifulSoup*(HTML töötlemine), *tkinter*(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
-
-google api alla laadimiseks tuleb kasutada käsklust:  
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib 
-  
-### Ülevaade failidest:  
-*testifailid* kaustas on esimese tunni *test_nimi.py* failid  
-*src/calenderupload.py* tegeleb Google Calendariga(Hardi), hetkel prototüüp testimiseks  
+### Ülevaade failidest:
+*src/main.py* käivitab programmi, ühendab vajalikud osad  
+*src/calenderupload.py* tegeleb Google Calendariga(Hardi)  
 *src/infoGatherer.py* saab iga klassi nime ja sellele vastava tunniplaani lingi(Hardi), tundide ajad ja kursuste info(Madis)  
+*src/credentials.json* on Google API tööks vajalik  
+  
+Järgmiseid ei ole programmi tööks vaja:  
+*src/tb-tkinter* kaustas on eksperimendid tkinteriga ja esimesed kasutajaliidese katsed  
 *paberprototüüp.png* on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
-*src/tb-tkinter* kaustas on eksperimendid tkinteriga
-*src/tb-tkinter/prog-CURRENT.zip* failis on esmane, paberprototüübist lähtuv liides(Taaniel), loodud pigem õppeesmärgil, täpsustunud vajaduste jaoks on vaja keerulisemat  
+*testifailid* kaustas on esimese tunni *test_nimi.py* failid  
+
+ 
