@@ -25,7 +25,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 *src/credentials.json* on Google API tööks vajalik  
   
 **Järgmiseid ei ole programmi tööks vaja, aga on tööprotsessi jäädvustamiseks säilitatud:**  
-*scr/brlr2.py* oli iseseisev kasutajaliidese baas, millest kujunes välja *ui3.py*(Taaniel)  
+*scr/brlr2.py* oli iseseisev kasutajaliidese baas, millest kujunes välja *ui3.py*(Taaniel+Hardi)  
 *src/tb-tkinter* kaustas on eksperimendid tkinteriga ja esimesed kasutajaliidese katsed(Taaniel)  
 *paberprototüüp.png* on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
 *testifailid* kaustas on esimese tunni *test_nimi.py* failid  
