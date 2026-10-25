@@ -1,7 +1,8 @@
 # googleplaan
 Graafilise kasutajaliidesega programm, eesmärgiks siduda TTG tunniplaan Google Calendariga  
 Valminud TTG programmeerimise 4. kursuse raames  
-**Kasutamiseks käivitada *src/main.py***  
+**Kasutamiseks käivitada *[src/main.py](src/main.py)***  
+Vajalik ka Google sisselogimine; **töötab ainult TTG kontoga**
 
 ### Projekti haldus  
 **Rühmaliikmed:** Madis, Hardi, Taaniel  
@@ -18,16 +19,16 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 *Väljund:* kasutaja valitud kursused laetakse tema Google Calendari ülesse nende õigel toimumise ajal, korduvad kuni perioodi lõpuni  
   
 ### Ülevaade failidest:
-***src/main.py* käivitab programmi**, ühendab projekti erinevad osad(Hardi)  
-*src/calenderupload.py* tegeleb Google Calendariga(Hardi)  
-*src/infoGatherer.py* saab iga klassi nime ja sellele vastava tunniplaani lingi(Hardi), tundide ajad ja kursuste info(Madis)  
-*src/ui3.py* on kasutajaliides(Taaniel+Hardi)  
-*src/credentials.json* on Google API tööks vajalik  
+***[src/main.py](src/main.py)* käivitab programmi**, ühendab projekti erinevad osad(Hardi)  
+*[src/calenderupload.py](src/calenderupload.py)* tegeleb Google Calendariga(Hardi)  
+*[src/infoGatherer.py](src/infoGatherer.py)* saab iga klassi nime ja sellele vastava tunniplaani lingi(Hardi), tundide ajad ja kursuste info(Madis)  
+*[src/ui3.py](src/ui3.py)* on kasutajaliides(Taaniel+Hardi)  
+*[src/credentials.json](src/credentials.json)* on Google API tööks vajalik  
   
 **Järgmiseid ei ole programmi tööks vaja, aga on tööprotsessi jäädvustamiseks säilitatud:**  
-*scr/brlr2.py* oli iseseisev kasutajaliidese baas, millest kujunes välja *ui3.py*(Taaniel+Hardi)  
-*src/tb-tkinter* kaustas on eksperimendid tkinteriga ja esimesed kasutajaliidese katsed(Taaniel)  
-*paberprototüüp.png* on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
-*testifailid* kaustas on esimese tunni *test_nimi.py* failid  
+*[scr/brlr2.py](scr/brlr2.py)* oli iseseisev kasutajaliidese baas, millest kujunes välja *ui3.py*(Taaniel+Hardi)  
+*[src/tb-tkinter](src/tb-tkinter)* kaustas on eksperimendid tkinteriga ja esimesed kasutajaliidese katsed(Taaniel)  
+*[paberprototüüp.png](paberprototüüp.png)* on esmane prototüüp sellele, kuidas kasutajaliides võiks välja näha(Taaniel)  
+*[testifailid](testifailid)* kaustas on esimese tunni *test_nimi.py* failid  
 
  
