@@ -13,7 +13,7 @@ Kokkuvõtvalt tööülesannetest: Madis - HTMLi töötlus ja info leidmine; Hard
 Kasutatud on teeke *requests*(HTML saamine), *BeautifulSoup*(HTML töötlemine), *tkinter*(kasutajaliides) ning Google API(kalendrisse üleslaadimine)  
 
 google api alla laadimiseks tuleb kasutada käsklust:  
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthli 
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib 
   
 ### Ülevaade failidest:  
 *testifailid* kaustas on esimese tunni *test_nimi.py* failid  
